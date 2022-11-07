@@ -3,8 +3,8 @@ package org.example;
 public class FractionTools {
 
     public String additionFraction(String one, String two) {
-        Fraction fractionOne = toOperator(one);
-        Fraction fractionTwo = toOperator(two);
+        Fraction fractionOne = toFraction(one);
+        Fraction fractionTwo = toFraction(two);
         if (differentDenominator(fractionOne, fractionTwo)) {
             getSameDenominator(fractionOne, fractionTwo);
         }
@@ -15,8 +15,8 @@ public class FractionTools {
     }
 
     public String soustractionFraction(String one, String two) {
-        Fraction fractionOne = toOperator(one);
-        Fraction fractionTwo = toOperator(two);
+        Fraction fractionOne = toFraction(one);
+        Fraction fractionTwo = toFraction(two);
         if (differentDenominator(fractionOne, fractionTwo)) {
             getSameDenominator(fractionOne, fractionTwo);
         }
@@ -27,8 +27,8 @@ public class FractionTools {
     }
 
     public String multiplicationFraction(String one, String two) {
-        Fraction fractionOne = toOperator(one);
-        Fraction fractionTwo = toOperator(two);
+        Fraction fractionOne = toFraction(one);
+        Fraction fractionTwo = toFraction(two);
         return multiplicationFraction(fractionOne, fractionTwo);
     }
 
@@ -41,8 +41,8 @@ public class FractionTools {
     }
 
     public String divisionFraction(String one, String two) {
-        Fraction fractionOne = toOperator(one);
-        Fraction fractionTwo = toOperator(two);
+        Fraction fractionOne = toFraction(one);
+        Fraction fractionTwo = toFraction(two);
         if (!divisionIsPossible(fractionTwo)) {
             return null;
         }
@@ -58,7 +58,7 @@ public class FractionTools {
         return Integer.parseInt(operator.split(";")[1]);
     }
 
-    private Fraction toOperator(String operator) {
+    private Fraction toFraction(String operator) {
         return new Fraction(getNominator(operator), getDenominator(operator));
     }
 
