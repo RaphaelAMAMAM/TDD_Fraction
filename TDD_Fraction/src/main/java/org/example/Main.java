@@ -81,6 +81,6 @@ public class Main {
     }
 
     static boolean fractionIsWrong(String fraction) {
-        return !fraction.matches("\\d+;[1-9]+");
+        return !fraction.matches("^-?[0-9]+;-?[1-9][0-9]?+$");
     }
 }

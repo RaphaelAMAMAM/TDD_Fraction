@@ -72,6 +72,16 @@ class FractionToolsTest {
         assertThat(resultWithTool).isEqualTo(resultExpected);
     }
 
+
+    @Test
+    void shouldReturn2_7WhenWeAdd1_Less7With3_7() {
+        String operatorOne = "1;-7";
+        String operatorTwo = "3;7";
+        String resultExpected = "2/7";
+        String resultWithTool = tools.additionFraction(operatorOne, operatorTwo);
+        assertThat(resultWithTool).isEqualTo(resultExpected);
+    }
+
     @Test
     void shouldReturnLessOne_4WhenWeSubstract1_4With2_4() {
         String operatorOne = "1;4";

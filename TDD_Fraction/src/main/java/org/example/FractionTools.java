@@ -91,6 +91,10 @@ public class FractionTools {
     }
 
     private Fraction tryToSimplify(Fraction fraction) {
+        if(bothFractionsAreNegatives(fraction)){
+            fraction = putBothFractionsPositives(fraction);
+        }
+
         if (nominatorIsBiggerThanDenominator(fraction)) {
             return simplifyWhenNominatorIsBiggerThanDenominator(fraction);
         }
@@ -98,6 +102,14 @@ public class FractionTools {
             return simplifyWhenNominatorIsSmallerThanDenominator(fraction);
         }
         return new Fraction(1, 1);
+    }
+
+    private boolean bothFractionsAreNegatives(Fraction fraction){
+        return fraction.getNominator() < 0 && fraction.getDenominator() < 0;
+    }
+
+    private Fraction putBothFractionsPositives(Fraction fraction){
+        return new Fraction((fraction.getNominator() * -1), (fraction.getDenominator() * -1));
     }
 
     private boolean nominatorIsBiggerThanDenominator(Fraction fraction) {
